@@ -21,7 +21,34 @@
   } catch (e) {}
 
   document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.addEventListener('click', toggleLang);
+    var langBtn = document.getElementById('lang-toggle');
+    if (langBtn) langBtn.addEventListener('click', toggleLang);
+
+    var header = document.querySelector('.site-header');
+    var navBtn = document.getElementById('nav-toggle');
+    var nav = document.getElementById('site-nav');
+
+    function closeNav() {
+      if (!header) return;
+      header.classList.remove('nav-open');
+      if (navBtn) navBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (navBtn && header) {
+      navBtn.addEventListener('click', function () {
+        var open = header.classList.toggle('nav-open');
+        navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    if (nav) {
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('.nav-link')) closeNav();
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
   });
 })();

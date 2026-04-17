@@ -18,12 +18,41 @@
 <body>
 
 <!-- ==================== Header ==================== -->
-<header class="site-header">
+<header class="site-header" id="top">
   <div class="header-inner">
-    <div class="header-logo-cell">
-      <a href="#top" class="logo" aria-label="1% Community">1%</a>
-    </div>
-    <div class="header-right-cell">
+    <a href="#top" class="logo" aria-label="1% Community">1%</a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#about" class="nav-link">
+        <span data-lang="ar" data-editable="nav.about.ar">عن عدي</span>
+        <span data-lang="en" data-editable="nav.about.en">About</span>
+      </a>
+      <a href="#programs" class="nav-link">
+        <span data-lang="ar" data-editable="nav.programs.ar">البرامج</span>
+        <span data-lang="en" data-editable="nav.programs.en">Programs</span>
+      </a>
+      <a href="#why" class="nav-link">
+        <span data-lang="ar" data-editable="nav.why.ar">ليش ١٪</span>
+        <span data-lang="en" data-editable="nav.why.en">Why 1%</span>
+      </a>
+      <a href="#testimonials" class="nav-link">
+        <span data-lang="ar" data-editable="nav.testimonials.ar">آراء</span>
+        <span data-lang="en" data-editable="nav.testimonials.en">Testimonials</span>
+      </a>
+      <a href="#contact" class="nav-link">
+        <span data-lang="ar" data-editable="nav.contact.ar">تواصل</span>
+        <span data-lang="en" data-editable="nav.contact.en">Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="nav-toggle" class="btn-nav-toggle" type="button" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
       <button id="lang-toggle" class="btn-lang" type="button" aria-label="Toggle language">
         <span data-lang="ar">EN</span>
         <span data-lang="en">عربي</span>
@@ -33,7 +62,7 @@
 </header>
 
 <!-- ==================== Hero ==================== -->
-<section class="hero" id="top">
+<section class="hero">
   <div class="hero-img-wrap">
     <img src="assets/images/hero.jpg" alt="" aria-hidden="true" data-editable-src="homepage.hero.image">
   </div>
@@ -58,7 +87,7 @@
 </section>
 
 <!-- ==================== About strip ==================== -->
-<section class="about-strip">
+<section class="about-strip" id="about">
   <img src="assets/images/trainer.jpg" alt="" aria-hidden="true"
        style="width:100%;max-width:480px;max-height:360px;object-fit:cover;margin:0 auto 24px;border-radius:10px;"
        data-editable-src="homepage.about.image">
@@ -81,25 +110,12 @@
 
   <div class="programs-grid">
 
-    <article class="program-card" data-program-slot="core_reboot">
-      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true"
-           data-editable-src="programs.core_reboot.image">
-      <div class="program-body">
-        <h3 class="program-title">
-          <span data-lang="ar" data-editable="programs.core_reboot.title.ar">برنامج الكور الحديدي</span>
-          <span data-lang="en" data-editable="programs.core_reboot.title.en">Core Reboot: 6-Week Corset Body Program</span>
-        </h3>
-        <p class="program-desc">
-          <span data-lang="ar" data-editable="programs.core_reboot.description.ar">ستة أسابيع من التدريب الصح اللي يشكّل كورك، يقويه، ويغيره من الداخل للخارج.</span>
-          <span data-lang="en" data-editable="programs.core_reboot.description.en">Six weeks of real core training that sculpts, strengthens, and transforms your midsection from the inside out.</span>
-        </p>
-        <div class="program-price" data-editable="programs.core_reboot.price">180 SAR</div>
-        <a href="#" class="program-cta" data-editable-href="programs.core_reboot.cta_link">
-          <span data-lang="ar" data-editable="programs.core_reboot.cta_text.ar">شوفوا البرنامج</span>
-          <span data-lang="en" data-editable="programs.core_reboot.cta_text.en">View Program</span>
-        </a>
-      </div>
-    </article>
+    <!--
+      PROGRAM SLOT RESERVED: core_reboot
+      Omitted until Stripe business verification clears (deadline 2026-04-28).
+      When the Payment Link exists, re-insert the <article data-program-slot="core_reboot"> block
+      and the dashboard's data-editable markers will rehydrate it.
+    -->
 
     <article class="program-card" data-program-slot="move_without_pain">
       <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true"
@@ -165,7 +181,7 @@
 </section>
 
 <!-- ==================== Why 1PC ==================== -->
-<section class="section">
+<section class="section" id="why">
   <h2 class="section-title">
     <span data-lang="ar" data-editable="homepage.why.title.ar">ليش ١٪؟</span>
     <span data-lang="en" data-editable="homepage.why.title.en">Why 1%?</span>
@@ -244,7 +260,7 @@
 </section>
 
 <!-- ==================== Testimonials ==================== -->
-<section class="section">
+<section class="section" id="testimonials">
   <h2 class="section-title">
     <span data-lang="ar" data-editable="homepage.testimonials.title.ar">إيش يقولون الناس</span>
     <span data-lang="en" data-editable="homepage.testimonials.title.en">What people say</span>
@@ -299,14 +315,38 @@
 </section>
 
 <!-- ==================== Footer ==================== -->
-<footer class="site-footer">
-  <div class="footer-links">
-    <a href="https://instagram.com/odairajeh" target="_blank" rel="noopener" data-editable-href="footer.instagram_url">Instagram</a>
-    <a href="mailto:hello@1percent.community" data-editable-href="footer.email_url" data-editable="footer.email_text">hello@1percent.community</a>
-  </div>
-  <div>
-    <span data-lang="ar" data-editable="footer.copyright.ar">© مجتمع ١٪ — جميع الحقوق محفوظة</span>
-    <span data-lang="en" data-editable="footer.copyright.en">© 1% Community — All rights reserved</span>
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+
+    <nav class="footer-socials" aria-label="Social">
+      <a class="social-link" href="https://instagram.com/1percent_community" target="_blank" rel="noopener"
+         aria-label="Instagram" data-editable-href="footer.instagram_url">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="sr-only" data-editable="footer.instagram_handle">@1percent_community</span>
+      </a>
+      <a class="social-link" href="https://tiktok.com/@1percent_community" target="_blank" rel="noopener"
+         aria-label="TikTok" data-editable-href="footer.tiktok_url">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
+        </svg>
+        <span class="sr-only" data-editable="footer.tiktok_handle">@1percent_community</span>
+      </a>
+    </nav>
+
+    <a class="footer-email" href="mailto:hello@1percent.community"
+       data-editable-href="footer.email_url" data-editable="footer.email_text">
+      hello@1percent.community
+    </a>
+
+    <div class="footer-copy">
+      <span data-lang="ar" data-editable="footer.copyright.ar">© ٢٠٢٦ مجتمع ١٪ — جميع الحقوق محفوظة</span>
+      <span data-lang="en" data-editable="footer.copyright.en">© 2026 1% Community — All rights reserved</span>
+    </div>
+
   </div>
 </footer>
 
