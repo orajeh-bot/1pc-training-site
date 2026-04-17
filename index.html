@@ -35,25 +35,24 @@
 <!-- ==================== Hero ==================== -->
 <section class="hero" id="top">
   <div class="hero-img-wrap">
-    <img src="assets/images/hero.jpg" alt="" aria-hidden="true">
+    <img src="assets/images/hero.jpg" alt="" aria-hidden="true" data-editable-src="homepage.hero.image">
   </div>
   <div class="hero-body">
     <h1 class="hero-title">
-      <span data-lang="ar">مجتمع 1%</span>
-      <span data-lang="en">1% Community</span>
+      <span data-lang="ar" data-editable="homepage.hero.title.ar">مجتمع 1%</span>
+      <span data-lang="en" data-editable="homepage.hero.title.en">1% Community</span>
     </h1>
     <p class="hero-sub">
-      <span data-lang="ar">كل يوم أحسن بـ ١٪</span>
-      <span data-lang="en">Get 1% better every day</span>
+      <span data-lang="ar" data-editable="homepage.hero.subtitle.ar">كل يوم أحسن بـ ١٪</span>
+      <span data-lang="en" data-editable="homepage.hero.subtitle.en">Get 1% better every day</span>
     </p>
     <p class="hero-desc">
-      <span data-lang="ar">برامج فتنس أونلاين علمية مع عدي راجح. تدريب ذكي مو قاسي، ونتائج تقدرون تقيسونها.</span>
-      <span data-lang="en">Science-backed online fitness programs with Odai Rajeh. Smart training, not extreme — and progress you can actually measure.</span>
+      <span data-lang="ar" data-editable="homepage.hero.description.ar">برامج فتنس أونلاين علمية مع عدي راجح. تدريب ذكي مو قاسي، ونتائج تقدرون تقيسونها.</span>
+      <span data-lang="en" data-editable="homepage.hero.description.en">Science-backed online fitness programs with Odai Rajeh. Smart training, not extreme — and progress you can actually measure.</span>
     </p>
-    <!-- {{PLACEHOLDER: Stripe checkout URL — currently points to #programs}} -->
-    <a href="#programs" class="btn">
-      <span data-lang="ar">استكشفوا البرامج</span>
-      <span data-lang="en">Explore Programs</span>
+    <a href="#programs" class="btn" data-editable-href="homepage.hero.cta_link">
+      <span data-lang="ar" data-editable="homepage.hero.cta_text.ar">استكشفوا البرامج</span>
+      <span data-lang="en" data-editable="homepage.hero.cta_text.en">Explore Programs</span>
     </a>
   </div>
 </section>
@@ -61,106 +60,103 @@
 <!-- ==================== About strip ==================== -->
 <section class="about-strip">
   <img src="assets/images/trainer.jpg" alt="" aria-hidden="true"
-       style="width:100%;max-width:480px;max-height:360px;object-fit:cover;margin:0 auto 24px;border-radius:10px;">
+       style="width:100%;max-width:480px;max-height:360px;object-fit:cover;margin:0 auto 24px;border-radius:10px;"
+       data-editable-src="homepage.about.image">
   <p>
-    <span data-lang="ar">أنا عدي، وبنيت مجتمع ١٪ عشان كل واحد يبغى يغير جسمه يلاقي طريق واضح. تدريب ذكي، مو قاسي.</span>
-    <span data-lang="en">I'm Odai. I built 1% Community so anyone who wants to change their body has a clear path. Smart training, not extremes.</span>
+    <span data-lang="ar" data-editable="homepage.about.paragraph.ar">أنا عدي، وبنيت مجتمع ١٪ عشان كل واحد يبغى يغير جسمه يلاقي طريق واضح. تدريب ذكي، مو قاسي.</span>
+    <span data-lang="en" data-editable="homepage.about.paragraph.en">I'm Odai. I built 1% Community so anyone who wants to change their body has a clear path. Smart training, not extremes.</span>
   </p>
 </section>
 
 <!-- ==================== Programs ==================== -->
 <section class="section" id="programs">
   <h2 class="section-title">
-    <span data-lang="ar">البرامج</span>
-    <span data-lang="en">Programs</span>
+    <span data-lang="ar" data-editable="homepage.programs.title.ar">البرامج</span>
+    <span data-lang="en" data-editable="homepage.programs.title.en">Programs</span>
   </h2>
   <p class="section-sub">
-    <span data-lang="ar">أربعة برامج — كل واحد مبني لهدف محدد. اختاروا اللي يناسبكم.</span>
-    <span data-lang="en">Four programs — each built for a specific goal. Pick the one that fits you.</span>
+    <span data-lang="ar" data-editable="homepage.programs.subtitle.ar">أربعة برامج — كل واحد مبني لهدف محدد. اختاروا اللي يناسبكم.</span>
+    <span data-lang="en" data-editable="homepage.programs.subtitle.en">Four programs — each built for a specific goal. Pick the one that fits you.</span>
   </p>
 
   <div class="programs-grid">
 
-    <!-- Core Reboot — Notion page 343628e9-a997-81a3-85d3-c2fa3be08781 -->
-    <article class="program-card">
-      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true">
+    <article class="program-card" data-program-slot="core_reboot">
+      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true"
+           data-editable-src="programs.core_reboot.image">
       <div class="program-body">
         <h3 class="program-title">
-          <span data-lang="ar">برنامج الكور الحديدي</span>
-          <span data-lang="en">Core Reboot</span>
+          <span data-lang="ar" data-editable="programs.core_reboot.title.ar">برنامج الكور الحديدي</span>
+          <span data-lang="en" data-editable="programs.core_reboot.title.en">Core Reboot</span>
         </h3>
         <p class="program-desc">
-          <span data-lang="ar">ستة أسابيع من التدريب الصح اللي يشكّل كوركم، يقويه، ويغيره من الداخل للخارج.</span>
-          <span data-lang="en">Six weeks of real core training that sculpts, strengthens, and transforms your midsection from the inside out.</span>
+          <span data-lang="ar" data-editable="programs.core_reboot.description.ar">ستة أسابيع من التدريب الصح اللي يشكّل كوركم، يقويه، ويغيره من الداخل للخارج.</span>
+          <span data-lang="en" data-editable="programs.core_reboot.description.en">Six weeks of real core training that sculpts, strengthens, and transforms your midsection from the inside out.</span>
         </p>
-        <div class="program-price">180 SAR</div>
-        <!-- {{PLACEHOLDER: Stripe checkout URL for Core Reboot — Notion Payment Link is empty}} -->
-        <a href="#" class="program-cta">
-          <span data-lang="ar">شوفوا البرنامج</span>
-          <span data-lang="en">View Program</span>
+        <div class="program-price" data-editable="programs.core_reboot.price">180 SAR</div>
+        <a href="#" class="program-cta" data-editable-href="programs.core_reboot.cta_link">
+          <span data-lang="ar" data-editable="programs.core_reboot.cta_text.ar">شوفوا البرنامج</span>
+          <span data-lang="en" data-editable="programs.core_reboot.cta_text.en">View Program</span>
         </a>
       </div>
     </article>
 
-    <!-- Move Without Pain — Notion page 344628e9-a997-81a4-993a-d727cee6a39c -->
-    <article class="program-card">
-      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true">
+    <article class="program-card" data-program-slot="move_without_pain">
+      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true"
+           data-editable-src="programs.move_without_pain.image">
       <div class="program-body">
         <h3 class="program-title">
-          <span data-lang="ar">تحرك بدون ألم</span>
-          <span data-lang="en">Move Without Pain</span>
+          <span data-lang="ar" data-editable="programs.move_without_pain.title.ar">تحرك بدون ألم</span>
+          <span data-lang="en" data-editable="programs.move_without_pain.title.en">Move Without Pain</span>
         </h3>
         <p class="program-desc">
-          <span data-lang="ar">٤ أسابيع، بدون معدات، بدون جيم — بس جسم يتحرك بدون ما يوجعكم.</span>
-          <span data-lang="en">4 weeks, no equipment, no gym — just a body that finally moves without fighting you.</span>
+          <span data-lang="ar" data-editable="programs.move_without_pain.description.ar">٤ أسابيع، بدون معدات، بدون جيم — بس جسم يتحرك بدون ما يوجعكم.</span>
+          <span data-lang="en" data-editable="programs.move_without_pain.description.en">4 weeks, no equipment, no gym — just a body that finally moves without fighting you.</span>
         </p>
-        <div class="program-price">120 SAR</div>
-        <!-- {{PLACEHOLDER: Stripe checkout URL for Move Without Pain — Notion Payment Link is empty}} -->
-        <a href="#" class="program-cta">
-          <span data-lang="ar">شوفوا البرنامج</span>
-          <span data-lang="en">View Program</span>
+        <div class="program-price" data-editable="programs.move_without_pain.price">120 SAR</div>
+        <a href="#" class="program-cta" data-editable-href="programs.move_without_pain.cta_link">
+          <span data-lang="ar" data-editable="programs.move_without_pain.cta_text.ar">شوفوا البرنامج</span>
+          <span data-lang="en" data-editable="programs.move_without_pain.cta_text.en">View Program</span>
         </a>
       </div>
     </article>
 
-    <!-- Strong From The Ground Up — Notion page 344628e9-a997-8171-91da-d64a34a48934 -->
-    <article class="program-card">
-      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true">
+    <article class="program-card" data-program-slot="strong_from_the_ground_up">
+      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true"
+           data-editable-src="programs.strong_from_the_ground_up.image">
       <div class="program-body">
         <h3 class="program-title">
-          <span data-lang="ar">قوي من الأساس</span>
-          <span data-lang="en">Strong From The Ground Up</span>
+          <span data-lang="ar" data-editable="programs.strong_from_the_ground_up.title.ar">قوي من الأساس</span>
+          <span data-lang="en" data-editable="programs.strong_from_the_ground_up.title.en">Strong From The Ground Up</span>
         </h3>
         <p class="program-desc">
-          <span data-lang="ar">٨ أسابيع تدريب بالوزن الحر تبني قوة حقيقية من الصفر — مو محتاجين جيم ولا أجهزة ولا خبرة.</span>
-          <span data-lang="en">8 weeks of bodyweight training that builds real strength from zero — no gym, no equipment, no experience needed.</span>
+          <span data-lang="ar" data-editable="programs.strong_from_the_ground_up.description.ar">٨ أسابيع تدريب بالوزن الحر تبني قوة حقيقية من الصفر — مو محتاجين جيم ولا أجهزة ولا خبرة.</span>
+          <span data-lang="en" data-editable="programs.strong_from_the_ground_up.description.en">8 weeks of bodyweight training that builds real strength from zero — no gym, no equipment, no experience needed.</span>
         </p>
-        <div class="program-price">180 SAR</div>
-        <!-- {{PLACEHOLDER: Stripe checkout URL for Strong From The Ground Up — Notion Payment Link is empty}} -->
-        <a href="#" class="program-cta">
-          <span data-lang="ar">شوفوا البرنامج</span>
-          <span data-lang="en">View Program</span>
+        <div class="program-price" data-editable="programs.strong_from_the_ground_up.price">180 SAR</div>
+        <a href="#" class="program-cta" data-editable-href="programs.strong_from_the_ground_up.cta_link">
+          <span data-lang="ar" data-editable="programs.strong_from_the_ground_up.cta_text.ar">شوفوا البرنامج</span>
+          <span data-lang="en" data-editable="programs.strong_from_the_ground_up.cta_text.en">View Program</span>
         </a>
       </div>
     </article>
 
-    <!-- Corset Core — Notion page 342628e9-a997-81ff-b6b6-cad62f61639d — Notion Website Content (AR/EN) fields empty; copy below written fresh in feminine-singular Hijazi since Target Audience is women -->
-    <article class="program-card">
-      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true">
+    <article class="program-card" data-program-slot="corset_core">
+      <img class="program-img" src="assets/images/photo_2.jpg" alt="" aria-hidden="true"
+           data-editable-src="programs.corset_core.image">
       <div class="program-body">
         <h3 class="program-title">
-          <span data-lang="ar">كور كورسيه</span>
-          <span data-lang="en">Corset Core</span>
+          <span data-lang="ar" data-editable="programs.corset_core.title.ar">كور كورسيه</span>
+          <span data-lang="en" data-editable="programs.corset_core.title.en">Corset Core</span>
         </h3>
         <p class="program-desc">
-          <span data-lang="ar">٦ أسابيع، ٤ جلسات في الأسبوع. شكّلي خصرك وكور حقيقي من الداخل للخارج — من غير جيم ولا معدات.</span>
-          <span data-lang="en">6 weeks, 4 sessions a week. Sculpt your waist and build a real core from the inside out — no gym, no equipment.</span>
+          <span data-lang="ar" data-editable="programs.corset_core.description.ar">٦ أسابيع، ٤ جلسات في الأسبوع. شكّلي خصرك وكور حقيقي من الداخل للخارج — من غير جيم ولا معدات.</span>
+          <span data-lang="en" data-editable="programs.corset_core.description.en">6 weeks, 4 sessions a week. Sculpt your waist and build a real core from the inside out — no gym, no equipment.</span>
         </p>
-        <div class="program-price">180 SAR</div>
-        <!-- {{PLACEHOLDER: Stripe checkout URL for Corset Core — Notion Payment Link is empty}} -->
-        <a href="#" class="program-cta">
-          <span data-lang="ar">شوفي البرنامج</span>
-          <span data-lang="en">View Program</span>
+        <div class="program-price" data-editable="programs.corset_core.price">180 SAR</div>
+        <a href="#" class="program-cta" data-editable-href="programs.corset_core.cta_link">
+          <span data-lang="ar" data-editable="programs.corset_core.cta_text.ar">شوفي البرنامج</span>
+          <span data-lang="en" data-editable="programs.corset_core.cta_text.en">View Program</span>
         </a>
       </div>
     </article>
@@ -171,8 +167,8 @@
 <!-- ==================== Why 1PC ==================== -->
 <section class="section">
   <h2 class="section-title">
-    <span data-lang="ar">ليش ١٪؟</span>
-    <span data-lang="en">Why 1%?</span>
+    <span data-lang="ar" data-editable="homepage.why.title.ar">ليش ١٪؟</span>
+    <span data-lang="en" data-editable="homepage.why.title.en">Why 1%?</span>
   </h2>
 
   <div class="why-grid">
@@ -185,12 +181,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar">كوتش حقيقي</span>
-        <span data-lang="en">Real Coach</span>
+        <span data-lang="ar" data-editable="homepage.why.coach.title.ar">كوتش حقيقي</span>
+        <span data-lang="en" data-editable="homepage.why.coach.title.en">Real Coach</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar">مو ملف بس — كل أسبوع توجيه واضح يناسبكم.</span>
-        <span data-lang="en">Not just a PDF — clear, adaptive guidance every week.</span>
+        <span data-lang="ar" data-editable="homepage.why.coach.description.ar">مو ملف بس — كل أسبوع توجيه واضح يناسبكم.</span>
+        <span data-lang="en" data-editable="homepage.why.coach.description.en">Not just a PDF — clear, adaptive guidance every week.</span>
       </p>
     </div>
 
@@ -202,12 +198,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar">مبني على العلم</span>
-        <span data-lang="en">Science-Backed</span>
+        <span data-lang="ar" data-editable="homepage.why.science.title.ar">مبني على العلم</span>
+        <span data-lang="en" data-editable="homepage.why.science.title.en">Science-Backed</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar">كل تمرين ورى سبب واضح — مو تخمين.</span>
-        <span data-lang="en">Every exercise has a clear reason — no guesswork.</span>
+        <span data-lang="ar" data-editable="homepage.why.science.description.ar">كل تمرين ورى سبب واضح — مو تخمين.</span>
+        <span data-lang="en" data-editable="homepage.why.science.description.en">Every exercise has a clear reason — no guesswork.</span>
       </p>
     </div>
 
@@ -219,12 +215,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar">تقدم يومي</span>
-        <span data-lang="en">Daily Progress</span>
+        <span data-lang="ar" data-editable="homepage.why.progress.title.ar">تقدم يومي</span>
+        <span data-lang="en" data-editable="homepage.why.progress.title.en">Daily Progress</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar">١٪ كل يوم — خطوات صغيرة تبني نتيجة كبيرة.</span>
-        <span data-lang="en">1% each day — small steps build a big result.</span>
+        <span data-lang="ar" data-editable="homepage.why.progress.description.ar">١٪ كل يوم — خطوات صغيرة تبني نتيجة كبيرة.</span>
+        <span data-lang="en" data-editable="homepage.why.progress.description.en">1% each day — small steps build a big result.</span>
       </p>
     </div>
 
@@ -235,12 +231,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar">مجتمع يدفعكم</span>
-        <span data-lang="en">Community Support</span>
+        <span data-lang="ar" data-editable="homepage.why.community.title.ar">مجتمع يدفعكم</span>
+        <span data-lang="en" data-editable="homepage.why.community.title.en">Community Support</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar">ما أنتم لوحدكم — مجتمع كامل يدفعكم للأمام.</span>
-        <span data-lang="en">You're not alone — a full community pushing you forward.</span>
+        <span data-lang="ar" data-editable="homepage.why.community.description.ar">ما أنتم لوحدكم — مجتمع كامل يدفعكم للأمام.</span>
+        <span data-lang="en" data-editable="homepage.why.community.description.en">You're not alone — a full community pushing you forward.</span>
       </p>
     </div>
 
@@ -250,35 +246,34 @@
 <!-- ==================== Testimonials ==================== -->
 <section class="section">
   <h2 class="section-title">
-    <span data-lang="ar">إيش يقولون الناس</span>
-    <span data-lang="en">What people say</span>
+    <span data-lang="ar" data-editable="homepage.testimonials.title.ar">إيش يقولون الناس</span>
+    <span data-lang="en" data-editable="homepage.testimonials.title.en">What people say</span>
   </h2>
 
   <div class="testimonials">
 
-    <!-- {{PLACEHOLDER: real testimonials — pull from Notion/Typeform once available}} -->
     <figure class="quote">
       <p class="quote-text">
-        <span data-lang="ar">«أحسن برنامج جربته. خلال ٨ أسابيع جسمي تغير وثقتي في نفسي زادت كثير.»</span>
-        <span data-lang="en">"Best program I've tried. In 8 weeks my body changed and my confidence jumped hard."</span>
+        <span data-lang="ar" data-editable="homepage.testimonials.0.quote.ar">«أحسن برنامج جربته. خلال ٨ أسابيع جسمي تغير وثقتي في نفسي زادت كثير.»</span>
+        <span data-lang="en" data-editable="homepage.testimonials.0.quote.en">"Best program I've tried. In 8 weeks my body changed and my confidence jumped hard."</span>
       </p>
-      <figcaption class="quote-author">— M. R.</figcaption>
+      <figcaption class="quote-author" data-editable="homepage.testimonials.0.author">— M. R.</figcaption>
     </figure>
 
     <figure class="quote">
       <p class="quote-text">
-        <span data-lang="ar">«بسيط وواضح. كل يوم عندي خطة، وكل أسبوع أشوف فرق حقيقي.»</span>
-        <span data-lang="en">"Simple and clear. Every day I have a plan, every week I see real progress."</span>
+        <span data-lang="ar" data-editable="homepage.testimonials.1.quote.ar">«بسيط وواضح. كل يوم عندي خطة، وكل أسبوع أشوف فرق حقيقي.»</span>
+        <span data-lang="en" data-editable="homepage.testimonials.1.quote.en">"Simple and clear. Every day I have a plan, every week I see real progress."</span>
       </p>
-      <figcaption class="quote-author">— S. A.</figcaption>
+      <figcaption class="quote-author" data-editable="homepage.testimonials.1.author">— S. A.</figcaption>
     </figure>
 
     <figure class="quote">
       <p class="quote-text">
-        <span data-lang="ar">«عدي يشرح كل شي بصدق. أول مرة أحس إن الكوتش فاهم جسمي.»</span>
-        <span data-lang="en">"Odai explains everything honestly. First time a coach actually understood my body."</span>
+        <span data-lang="ar" data-editable="homepage.testimonials.2.quote.ar">«عدي يشرح كل شي بصدق. أول مرة أحس إن الكوتش فاهم جسمي.»</span>
+        <span data-lang="en" data-editable="homepage.testimonials.2.quote.en">"Odai explains everything honestly. First time a coach actually understood my body."</span>
       </p>
-      <figcaption class="quote-author">— L. H.</figcaption>
+      <figcaption class="quote-author" data-editable="homepage.testimonials.2.author">— L. H.</figcaption>
     </figure>
 
   </div>
@@ -287,32 +282,31 @@
 <!-- ==================== Final CTA ==================== -->
 <section class="final-cta">
   <img src="assets/images/cta.jpg" alt="" aria-hidden="true"
-       style="width:100%;max-width:640px;max-height:400px;object-fit:cover;margin:0 auto 24px;border-radius:10px;display:block;">
+       style="width:100%;max-width:640px;max-height:400px;object-fit:cover;margin:0 auto 24px;border-radius:10px;display:block;"
+       data-editable-src="homepage.final_cta.image">
   <h2>
-    <span data-lang="ar">جاهزين تتغيرون؟</span>
-    <span data-lang="en">Ready to change?</span>
+    <span data-lang="ar" data-editable="homepage.final_cta.title.ar">جاهزين تتغيرون؟</span>
+    <span data-lang="en" data-editable="homepage.final_cta.title.en">Ready to change?</span>
   </h2>
   <p>
-    <span data-lang="ar">اختاروا برنامجكم وابدأوا دحين. الخطوة الأولى هي الأصعب — وبعدها تصير أسهل كل يوم.</span>
-    <span data-lang="en">Pick your program and start today. The first step is the hardest — it gets easier every day after.</span>
+    <span data-lang="ar" data-editable="homepage.final_cta.description.ar">اختاروا برنامجكم وابدأوا دحين. الخطوة الأولى هي الأصعب — وبعدها تصير أسهل كل يوم.</span>
+    <span data-lang="en" data-editable="homepage.final_cta.description.en">Pick your program and start today. The first step is the hardest — it gets easier every day after.</span>
   </p>
-  <!-- {{PLACEHOLDER: Stripe checkout URL — use #programs for now}} -->
-  <a href="#programs" class="btn">
-    <span data-lang="ar">ابدأوا دحين</span>
-    <span data-lang="en">Start now</span>
+  <a href="#programs" class="btn" data-editable-href="homepage.final_cta.cta_link">
+    <span data-lang="ar" data-editable="homepage.final_cta.cta_text.ar">ابدأوا دحين</span>
+    <span data-lang="en" data-editable="homepage.final_cta.cta_text.en">Start now</span>
   </a>
 </section>
 
 <!-- ==================== Footer ==================== -->
 <footer class="site-footer">
   <div class="footer-links">
-    <a href="https://instagram.com/odairajeh" target="_blank" rel="noopener">Instagram</a>
-    <!-- {{PLACEHOLDER: real support email — currently hello@1percent.community}} -->
-    <a href="mailto:hello@1percent.community">hello@1percent.community</a>
+    <a href="https://instagram.com/odairajeh" target="_blank" rel="noopener" data-editable-href="footer.instagram_url">Instagram</a>
+    <a href="mailto:hello@1percent.community" data-editable-href="footer.email_url" data-editable="footer.email_text">hello@1percent.community</a>
   </div>
   <div>
-    <span data-lang="ar">© مجتمع ١٪ — جميع الحقوق محفوظة</span>
-    <span data-lang="en">© 1% Community — All rights reserved</span>
+    <span data-lang="ar" data-editable="footer.copyright.ar">© مجتمع ١٪ — جميع الحقوق محفوظة</span>
+    <span data-lang="en" data-editable="footer.copyright.en">© 1% Community — All rights reserved</span>
   </div>
 </footer>
 
