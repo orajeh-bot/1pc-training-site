@@ -750,6 +750,160 @@ html[lang="en"] [data-lang="ar"] { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
+   DATA-VISIBLE — CMS-driven visibility toggle (data-* flag set by patcher)
+   ══════════════════════════════════════════════════════════════════════ */
+[data-visible="false"] { display: none !important; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ABOUT — multi-paragraph body + 3-stat strip
+   ══════════════════════════════════════════════════════════════════════ */
+.about-body {
+  max-width: 720px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+}
+.about-paragraph {
+  color: var(--text-dim);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin-bottom: var(--space-md);
+}
+.about-paragraph:last-child { margin-bottom: 0; }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-sm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.about-stat { text-align: center; padding: var(--space-xs) 0; }
+.stat-value {
+  color: var(--accent);
+  font: 800 1.7rem/1 var(--font-en);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: var(--font-en);
+}
+html[lang="ar"] .stat-label { font-family: var(--font-ar); letter-spacing: 0; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   TRAINER — photo + meta, with data-pos / data-size layout controls
+   ══════════════════════════════════════════════════════════════════════ */
+.trainer-section { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+.trainer-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.trainer-photo {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.trainer-photo img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-faint);
+}
+/* data-size: small|medium|large */
+.trainer-section[data-size="small"]  .trainer-photo img { max-width: 260px; }
+.trainer-section[data-size="medium"] .trainer-photo img { max-width: 340px; }
+.trainer-section[data-size="large"]  .trainer-photo img { max-width: 460px; }
+
+.trainer-meta {
+  text-align: center;
+}
+.trainer-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.trainer-role {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-en);
+}
+html[lang="ar"] .trainer-role { font-family: var(--font-ar); }
+.trainer-bio {
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin: 0 auto var(--space-md);
+  max-width: 520px;
+}
+.trainer-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   CONTACT FORM — static, mailto-backed
+   ══════════════════════════════════════════════════════════════════════ */
+.footer-contact-col h4 { margin-bottom: var(--space-md); }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.contact-field-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-en);
+}
+html[lang="ar"] .contact-field-label { font-family: var(--font-ar); letter-spacing: 0; }
+.contact-field input,
+.contact-field textarea {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 10px 12px;
+  font: 400 0.95rem var(--font-en);
+  transition: border-color var(--t), box-shadow var(--t);
+}
+html[lang="ar"] .contact-field input,
+html[lang="ar"] .contact-field textarea { font-family: var(--font-ar); }
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-softer);
+}
+.contact-field textarea { resize: vertical; min-height: 88px; }
+.contact-submit { align-self: flex-start; padding: 12px 28px; font-size: 0.9rem; }
+
+/* ══════════════════════════════════════════════════════════════════════
    DESKTOP BREAKPOINTS
    ══════════════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
@@ -789,6 +943,28 @@ html[lang="en"] [data-lang="ar"] { display: none; }
     border-bottom: 0;
   }
   .nav-link { padding: 10px 12px; font-size: 0.9rem; min-height: auto; }
+}
+
+@media (min-width: 768px) {
+  .about-stats { padding: var(--space-lg) var(--space-md); gap: var(--space-lg); }
+  .stat-value { font-size: 2.2rem; }
+  .trainer-layout {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+  .trainer-section[data-pos="right"] .trainer-layout {
+    direction: rtl;
+  }
+  html[dir="rtl"] .trainer-section[data-pos="right"] .trainer-layout { direction: ltr; }
+  html[dir="rtl"] .trainer-section[data-pos="left"]  .trainer-layout { direction: rtl; }
+  .trainer-section[data-pos="right"] .trainer-meta,
+  html[dir="rtl"] .trainer-section[data-pos="left"] .trainer-meta {
+    direction: initial;
+  }
+  .trainer-meta { text-align: start; }
+  .trainer-social { justify-content: flex-start; }
+  .contact-form { max-width: 420px; }
 }
 
 @media (min-width: 1200px) {

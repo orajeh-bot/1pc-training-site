@@ -28,25 +28,29 @@
     </a>
 
     <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="#about" class="nav-link">
-        <span data-lang="ar" data-editable="nav.about.ar">عن عدي</span>
-        <span data-lang="en" data-editable="nav.about.en">About</span>
+      <a class="nav-link" href="#about" data-visible="true"
+         data-editable-href="homepage.nav.links.0.href"
+         data-editable-data-visible="homepage.nav.links.0.visible">
+        <span data-lang="ar" data-editable="homepage.nav.links.0.ar">عنا</span>
+        <span data-lang="en" data-editable="homepage.nav.links.0.en">About</span>
       </a>
-      <a href="#programs" class="nav-link">
-        <span data-lang="ar" data-editable="nav.programs.ar">البرامج</span>
-        <span data-lang="en" data-editable="nav.programs.en">Programs</span>
+      <a class="nav-link" href="#programs" data-visible="true"
+         data-editable-href="homepage.nav.links.1.href"
+         data-editable-data-visible="homepage.nav.links.1.visible">
+        <span data-lang="ar" data-editable="homepage.nav.links.1.ar">البرامج</span>
+        <span data-lang="en" data-editable="homepage.nav.links.1.en">Programs</span>
       </a>
-      <a href="#why" class="nav-link">
-        <span data-lang="ar" data-editable="nav.why.ar">ليش ١٪</span>
-        <span data-lang="en" data-editable="nav.why.en">Why 1%</span>
+      <a class="nav-link" href="#trainer" data-visible="true"
+         data-editable-href="homepage.nav.links.2.href"
+         data-editable-data-visible="homepage.nav.links.2.visible">
+        <span data-lang="ar" data-editable="homepage.nav.links.2.ar">المدرب</span>
+        <span data-lang="en" data-editable="homepage.nav.links.2.en">Coach</span>
       </a>
-      <a href="#testimonials" class="nav-link">
-        <span data-lang="ar" data-editable="nav.testimonials.ar">آراء</span>
-        <span data-lang="en" data-editable="nav.testimonials.en">Testimonials</span>
-      </a>
-      <a href="#contact" class="nav-link">
-        <span data-lang="ar" data-editable="nav.contact.ar">تواصل</span>
-        <span data-lang="en" data-editable="nav.contact.en">Contact</span>
+      <a class="nav-link" href="#contact" data-visible="true"
+         data-editable-href="homepage.nav.links.3.href"
+         data-editable-data-visible="homepage.nav.links.3.visible">
+        <span data-lang="ar" data-editable="homepage.nav.links.3.ar">تواصل</span>
+        <span data-lang="en" data-editable="homepage.nav.links.3.en">Contact</span>
       </a>
     </nav>
 
@@ -69,10 +73,11 @@
 <!-- ==================== Hero ==================== -->
 <section class="hero">
   <div class="hero-img-wrap">
-    <img src="assets/images/hero.jpg" alt="" aria-hidden="true" data-editable-src="homepage.hero.image">
+    <img src="assets/images/hero.jpg" alt="" aria-hidden="true" data-editable-src="homepage.hero.background_photo">
   </div>
   <div class="hero-body">
-    <span class="hero-badge">
+    <span class="hero-badge" data-visible="true"
+          data-editable-data-visible="homepage.hero.badge.visible">
       <span data-lang="ar" data-editable="homepage.hero.badge.ar">تدريب أونلاين</span>
       <span data-lang="en" data-editable="homepage.hero.badge.en">Online Coaching</span>
     </span>
@@ -95,30 +100,125 @@
   </div>
 </section>
 
-<!-- ==================== About strip ==================== -->
+<!-- ==================== About ==================== -->
 <section class="about-strip" id="about">
-  <img src="assets/images/trainer.jpg" alt="" aria-hidden="true"
-       data-editable-src="homepage.about.image">
-  <p>
-    <span data-lang="ar" data-editable="homepage.about.paragraph.ar">أنا عدي، وبنيت مجتمع ١٪ عشان كل واحد يبغى يغير جسمه يلاقي طريق واضح. تدريب ذكي، مو قاسي.</span>
-    <span data-lang="en" data-editable="homepage.about.paragraph.en">I'm Odai. I built 1% Community so anyone who wants to change their body has a clear path. Smart training, not extremes.</span>
-  </p>
+  <div class="section-head">
+    <span class="section-label" data-visible="false"
+          data-editable-data-visible="homepage.about.section_label.visible">
+      <span data-lang="ar" data-editable="homepage.about.section_label.ar">عن ١٪</span>
+      <span data-lang="en" data-editable="homepage.about.section_label.en">About</span>
+    </span>
+    <h2 class="section-title">
+      <span data-lang="ar" data-editable="homepage.about.title.ar">إيش هو مجتمع 1%؟</span>
+      <span data-lang="en" data-editable="homepage.about.title.en">What is 1% Community?</span>
+    </h2>
+  </div>
+
+  <div class="about-body">
+    <p class="about-paragraph">
+      <span data-lang="ar" data-editable="homepage.about.paragraphs.0.ar">مجتمع 1% هو منصة تدريب رياضية أونلاين أسسها عدي راجح — مدرب شخصي ومستشار تغذية معتمد من جدة، السعودية. نصمم برامج تدريبية منظمة ومبنية على أسس علمية لنتايج حقيقية.</span>
+      <span data-lang="en" data-editable="homepage.about.paragraphs.0.en">1% Community is an online fitness coaching platform founded by Odai Rajeh — a certified personal trainer and nutrition coach based in Jeddah, Saudi Arabia. We create structured, science-backed training programs designed for real results.</span>
+    </p>
+    <p class="about-paragraph">
+      <span data-lang="ar" data-editable="homepage.about.paragraphs.1.ar">فلسفتنا: تحسينات صغيرة ومستمرة — بس 1% كل يوم — تتراكم وتعطي تغيير كبير مع الوقت.</span>
+      <span data-lang="en" data-editable="homepage.about.paragraphs.1.en">Our philosophy: small, consistent improvements — just 1% better every day — compound into dramatic transformation over time.</span>
+    </p>
+  </div>
+
+  <div class="about-stats">
+    <div class="about-stat">
+      <div class="stat-value" data-editable="homepage.about.stats.0.value">+50</div>
+      <div class="stat-label">
+        <span data-lang="ar" data-editable="homepage.about.stats.0.label.ar">تمرين بالفيديو</span>
+        <span data-lang="en" data-editable="homepage.about.stats.0.label.en">Guided Exercises</span>
+      </div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-value" data-editable="homepage.about.stats.1.value">8</div>
+      <div class="stat-label">
+        <span data-lang="ar" data-editable="homepage.about.stats.1.label.ar">أسابيع برامج</span>
+        <span data-lang="en" data-editable="homepage.about.stats.1.label.en">Week Programs</span>
+      </div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-value" data-editable="homepage.about.stats.2.value">∞</div>
+      <div class="stat-label">
+        <span data-lang="ar" data-editable="homepage.about.stats.2.label.ar">وصول مدى الحياة</span>
+        <span data-lang="en" data-editable="homepage.about.stats.2.label.en">Lifetime Access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Trainer ==================== -->
+<section class="section trainer-section" id="trainer"
+         data-pos="left" data-size="large"
+         data-editable-data-pos="homepage.trainer.photo_position"
+         data-editable-data-size="homepage.trainer.photo_size">
+  <div class="section-head">
+    <span class="section-label" data-visible="false"
+          data-editable-data-visible="homepage.trainer.section_label.visible">
+      <span data-lang="ar" data-editable="homepage.trainer.section_label.ar">المدرب</span>
+      <span data-lang="en" data-editable="homepage.trainer.section_label.en">Coach</span>
+    </span>
+    <h2 class="section-title">
+      <span data-lang="ar" data-editable="homepage.trainer.title.ar">تعرف على عدي راجح</span>
+      <span data-lang="en" data-editable="homepage.trainer.title.en">Meet Odai Rajeh</span>
+    </h2>
+  </div>
+
+  <div class="trainer-layout">
+    <figure class="trainer-photo">
+      <img src="assets/images/trainer.jpg" alt="Odai Rajeh" data-editable-src="homepage.trainer.photo">
+    </figure>
+    <div class="trainer-meta">
+      <h3 class="trainer-name">
+        <span data-lang="ar" data-editable="homepage.trainer.name.ar">عدي راجح</span>
+        <span data-lang="en" data-editable="homepage.trainer.name.en">Odai Rajeh</span>
+      </h3>
+      <p class="trainer-role">
+        <span data-lang="ar" data-editable="homepage.trainer.role.ar">المؤسس والمدرب الرئيسي — مجتمع 1%</span>
+        <span data-lang="en" data-editable="homepage.trainer.role.en">Founder &amp; Head Coach — 1% Community</span>
+      </p>
+      <p class="trainer-bio">
+        <span data-lang="ar" data-editable="homepage.trainer.bio.ar">مدرب شخصي ومستشار تغذية معتمد من جدة، السعودية. أسس مجتمع 1% عشان يوصل تدريب رياضي احترافي للجميع — ببرامج مبنية على أسس علمية تعطي نتايج حقيقية.</span>
+        <span data-lang="en" data-editable="homepage.trainer.bio.en">Certified personal trainer and nutrition coach based in Jeddah, Saudi Arabia. Founded 1% Community to make expert-level fitness coaching accessible to everyone — with science-backed programs that deliver real results.</span>
+      </p>
+      <div class="trainer-social">
+        <a class="social-link" href="https://instagram.com/odairajeh" target="_blank" rel="noopener"
+           aria-label="Instagram" data-editable-href="homepage.trainer.social.instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://tiktok.com/@odairajeh" target="_blank" rel="noopener"
+           aria-label="TikTok" data-editable-href="homepage.trainer.social.tiktok">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ==================== Programs ==================== -->
 <section class="section" id="programs">
   <div class="section-head">
-    <span class="section-label">
-      <span data-lang="ar" data-editable="homepage.programs.label.ar">البرامج</span>
-      <span data-lang="en" data-editable="homepage.programs.label.en">Programs</span>
+    <span class="section-label" data-visible="false"
+          data-editable-data-visible="homepage.programs.section_label.visible">
+      <span data-lang="ar" data-editable="homepage.programs.section_label.ar">البرامج</span>
+      <span data-lang="en" data-editable="homepage.programs.section_label.en">Programs</span>
     </span>
     <h2 class="section-title">
       <span data-lang="ar" data-editable="homepage.programs.title.ar">برامج تدريبية مصممة لنتايج حقيقية</span>
       <span data-lang="en" data-editable="homepage.programs.title.en">Training Programs Built for Results</span>
     </h2>
     <p class="section-sub">
-      <span data-lang="ar" data-editable="homepage.programs.subtitle.ar">برامج منظمة وتدريجية مع فيديوهات ووصفات شهية تناسب هدفك.</span>
-      <span data-lang="en" data-editable="homepage.programs.subtitle.en">Structured, progressive programs with video guides and recipes that serve your goal.</span>
+      <span data-lang="ar" data-editable="homepage.programs.subtitle.ar">برامج منظمة وتدريجية مع فيديوهات شرح ووصول مدى الحياة.</span>
+      <span data-lang="en" data-editable="homepage.programs.subtitle.en">Structured, progressive programs with video guides and lifetime access.</span>
     </p>
   </div>
 
@@ -194,16 +294,21 @@
   </div>
 </section>
 
-<!-- ==================== Why 1PC ==================== -->
+<!--
+  NOTE: Why / Testimonials / Final-CTA below are NOT yet represented in the
+  CMS schema (site_content.json). They render from hardcoded copy in this
+  HTML and are flagged in the deliverables report as "site field with no
+  dashboard equivalent". Either extend the schema to cover them or remove
+  them once the CMS trainer + about blocks carry enough social proof.
+-->
+
+<!-- ==================== Why 1PC (static, not in CMS yet) ==================== -->
 <section class="section" id="why">
   <div class="section-head">
-    <span class="section-label">
-      <span data-lang="ar" data-editable="homepage.why.label.ar">ليش ١٪</span>
-      <span data-lang="en" data-editable="homepage.why.label.en">Why 1%</span>
-    </span>
+    <span class="section-label">Why 1%</span>
     <h2 class="section-title">
-      <span data-lang="ar" data-editable="homepage.why.title.ar">ليش ١٪؟</span>
-      <span data-lang="en" data-editable="homepage.why.title.en">Why 1%?</span>
+      <span data-lang="ar">ليش ١٪؟</span>
+      <span data-lang="en">Why 1%?</span>
     </h2>
   </div>
 
@@ -217,12 +322,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar" data-editable="homepage.why.coach.title.ar">كوتش حقيقي</span>
-        <span data-lang="en" data-editable="homepage.why.coach.title.en">Real Coach</span>
+        <span data-lang="ar">كوتش حقيقي</span>
+        <span data-lang="en">Real Coach</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar" data-editable="homepage.why.coach.description.ar">مو ملف بس — كل أسبوع توجيه واضح يناسبك.</span>
-        <span data-lang="en" data-editable="homepage.why.coach.description.en">Not just a PDF — clear, adaptive guidance every week.</span>
+        <span data-lang="ar">مو ملف بس — كل أسبوع توجيه واضح يناسبك.</span>
+        <span data-lang="en">Not just a PDF — clear, adaptive guidance every week.</span>
       </p>
     </div>
 
@@ -234,12 +339,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar" data-editable="homepage.why.science.title.ar">مبني على العلم</span>
-        <span data-lang="en" data-editable="homepage.why.science.title.en">Science-Backed</span>
+        <span data-lang="ar">مبني على العلم</span>
+        <span data-lang="en">Science-Backed</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar" data-editable="homepage.why.science.description.ar">كل تمرين ورى سبب واضح — مو تخمين.</span>
-        <span data-lang="en" data-editable="homepage.why.science.description.en">Every exercise has a clear reason — no guesswork.</span>
+        <span data-lang="ar">كل تمرين ورى سبب واضح — مو تخمين.</span>
+        <span data-lang="en">Every exercise has a clear reason — no guesswork.</span>
       </p>
     </div>
 
@@ -251,12 +356,12 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar" data-editable="homepage.why.progress.title.ar">تقدم يومي</span>
-        <span data-lang="en" data-editable="homepage.why.progress.title.en">Daily Progress</span>
+        <span data-lang="ar">تقدم يومي</span>
+        <span data-lang="en">Daily Progress</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar" data-editable="homepage.why.progress.description.ar">١٪ كل يوم — خطوات صغيرة تبني نتيجة كبيرة.</span>
-        <span data-lang="en" data-editable="homepage.why.progress.description.en">1% each day — small steps build a big result.</span>
+        <span data-lang="ar">١٪ كل يوم — خطوات صغيرة تبني نتيجة كبيرة.</span>
+        <span data-lang="en">1% each day — small steps build a big result.</span>
       </p>
     </div>
 
@@ -267,28 +372,25 @@
         </svg>
       </div>
       <h3 class="why-title">
-        <span data-lang="ar" data-editable="homepage.why.community.title.ar">مجتمع يدفعك</span>
-        <span data-lang="en" data-editable="homepage.why.community.title.en">Community Support</span>
+        <span data-lang="ar">مجتمع يدفعك</span>
+        <span data-lang="en">Community Support</span>
       </h3>
       <p class="why-desc">
-        <span data-lang="ar" data-editable="homepage.why.community.description.ar">ما أنت لحالك — مجتمع كامل يدفعك للأمام.</span>
-        <span data-lang="en" data-editable="homepage.why.community.description.en">You're not alone — a full community pushing you forward.</span>
+        <span data-lang="ar">ما أنت لحالك — مجتمع كامل يدفعك للأمام.</span>
+        <span data-lang="en">You're not alone — a full community pushing you forward.</span>
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- ==================== Testimonials ==================== -->
+<!-- ==================== Testimonials (static, not in CMS yet) ==================== -->
 <section class="section" id="testimonials">
   <div class="section-head">
-    <span class="section-label">
-      <span data-lang="ar" data-editable="homepage.testimonials.label.ar">آراء</span>
-      <span data-lang="en" data-editable="homepage.testimonials.label.en">Testimonials</span>
-    </span>
+    <span class="section-label">Testimonials</span>
     <h2 class="section-title">
-      <span data-lang="ar" data-editable="homepage.testimonials.title.ar">إيش يقولون الناس</span>
-      <span data-lang="en" data-editable="homepage.testimonials.title.en">What people say</span>
+      <span data-lang="ar">إيش يقولون الناس</span>
+      <span data-lang="en">What people say</span>
     </h2>
   </div>
 
@@ -296,50 +398,49 @@
 
     <figure class="quote">
       <p class="quote-text">
-        <span data-lang="ar" data-editable="homepage.testimonials.0.quote.ar">«أحسن برنامج جربته. خلال ٨ أسابيع جسمي تغير وثقتي في نفسي زادت كثير.»</span>
-        <span data-lang="en" data-editable="homepage.testimonials.0.quote.en">"Best program I've tried. In 8 weeks my body changed and my confidence jumped hard."</span>
+        <span data-lang="ar">«أحسن برنامج جربته. خلال ٨ أسابيع جسمي تغير وثقتي في نفسي زادت كثير.»</span>
+        <span data-lang="en">"Best program I've tried. In 8 weeks my body changed and my confidence jumped hard."</span>
       </p>
-      <figcaption class="quote-author" data-editable="homepage.testimonials.0.author">— M. R.</figcaption>
+      <figcaption class="quote-author">— M. R.</figcaption>
     </figure>
 
     <figure class="quote">
       <p class="quote-text">
-        <span data-lang="ar" data-editable="homepage.testimonials.1.quote.ar">«بسيط وواضح. كل يوم عندي خطة، وكل أسبوع أشوف فرق حقيقي.»</span>
-        <span data-lang="en" data-editable="homepage.testimonials.1.quote.en">"Simple and clear. Every day I have a plan, every week I see real progress."</span>
+        <span data-lang="ar">«بسيط وواضح. كل يوم عندي خطة، وكل أسبوع أشوف فرق حقيقي.»</span>
+        <span data-lang="en">"Simple and clear. Every day I have a plan, every week I see real progress."</span>
       </p>
-      <figcaption class="quote-author" data-editable="homepage.testimonials.1.author">— S. A.</figcaption>
+      <figcaption class="quote-author">— S. A.</figcaption>
     </figure>
 
     <figure class="quote">
       <p class="quote-text">
-        <span data-lang="ar" data-editable="homepage.testimonials.2.quote.ar">«عدي يشرح كل شي بصدق. أول مرة أحس إن الكوتش فاهم جسمي.»</span>
-        <span data-lang="en" data-editable="homepage.testimonials.2.quote.en">"Odai explains everything honestly. First time a coach actually understood my body."</span>
+        <span data-lang="ar">«عدي يشرح كل شي بصدق. أول مرة أحس إن الكوتش فاهم جسمي.»</span>
+        <span data-lang="en">"Odai explains everything honestly. First time a coach actually understood my body."</span>
       </p>
-      <figcaption class="quote-author" data-editable="homepage.testimonials.2.author">— L. H.</figcaption>
+      <figcaption class="quote-author">— L. H.</figcaption>
     </figure>
 
   </div>
 </section>
 
-<!-- ==================== Final CTA ==================== -->
+<!-- ==================== Final CTA (static, not in CMS yet) ==================== -->
 <section class="final-cta">
-  <img src="assets/images/cta.jpg" alt="" aria-hidden="true"
-       data-editable-src="homepage.final_cta.image">
+  <img src="assets/images/cta.jpg" alt="" aria-hidden="true">
   <h2>
-    <span data-lang="ar" data-editable="homepage.final_cta.title.ar">جاهز للتغيير؟</span>
-    <span data-lang="en" data-editable="homepage.final_cta.title.en">Ready to change?</span>
+    <span data-lang="ar">جاهز للتغيير؟</span>
+    <span data-lang="en">Ready to change?</span>
   </h2>
   <p>
-    <span data-lang="ar" data-editable="homepage.final_cta.description.ar">اختار برنامجك وابدأ دحين. الخطوة الأولى هي الأصعب — وبعدها تصير أسهل كل يوم.</span>
-    <span data-lang="en" data-editable="homepage.final_cta.description.en">Pick your program and start today. The first step is the hardest — it gets easier every day after.</span>
+    <span data-lang="ar">اختار برنامجك وابدأ دحين. الخطوة الأولى هي الأصعب — وبعدها تصير أسهل كل يوم.</span>
+    <span data-lang="en">Pick your program and start today. The first step is the hardest — it gets easier every day after.</span>
   </p>
-  <a href="#programs" class="btn" data-editable-href="homepage.final_cta.cta_link">
-    <span data-lang="ar" data-editable="homepage.final_cta.cta_text.ar">ابدأ دحين</span>
-    <span data-lang="en" data-editable="homepage.final_cta.cta_text.en">Start now</span>
+  <a href="#programs" class="btn">
+    <span data-lang="ar">ابدأ دحين</span>
+    <span data-lang="en">Start now</span>
   </a>
 </section>
 
-<!-- ==================== Footer ==================== -->
+<!-- ==================== Footer (Contact) ==================== -->
 <footer class="site-footer" id="contact">
   <div class="footer-inner">
 
@@ -348,91 +449,97 @@
         <img src="assets/images/logo_white.png" alt="1% Community" width="180" height="40">
       </a>
       <p class="footer-tagline">
-        <span data-lang="ar" data-editable="footer.tagline.ar">برامج تدريب علمية من عدي رجح — مصممة لنتايج حقيقية.</span>
-        <span data-lang="en" data-editable="footer.tagline.en">Science-backed training programs by Odai Rajeh — built for real results.</span>
+        <span data-lang="ar" data-editable="homepage.footer.tagline.ar">مجتمع 1% من عدي راجح. برامج فتنس أونلاين مميزة مصممة لنتايج حقيقية.</span>
+        <span data-lang="en" data-editable="homepage.footer.tagline.en">1% Community by Odai Rajeh. Premium online fitness programs designed for real results.</span>
       </p>
     </div>
 
-    <div class="footer-col">
+    <div class="footer-col footer-contact-col">
       <h4>
-        <span data-lang="ar" data-editable="footer.nav.heading.ar">الموقع</span>
-        <span data-lang="en" data-editable="footer.nav.heading.en">Navigate</span>
+        <span data-lang="ar">تواصل</span>
+        <span data-lang="en">Get in touch</span>
       </h4>
-      <ul class="footer-links">
-        <li><a href="#about">
-          <span data-lang="ar" data-editable="footer.nav.about.ar">عن عدي</span>
-          <span data-lang="en" data-editable="footer.nav.about.en">About</span>
-        </a></li>
-        <li><a href="#programs">
-          <span data-lang="ar" data-editable="footer.nav.programs.ar">البرامج</span>
-          <span data-lang="en" data-editable="footer.nav.programs.en">Programs</span>
-        </a></li>
-        <li><a href="#why">
-          <span data-lang="ar" data-editable="footer.nav.why.ar">ليش ١٪</span>
-          <span data-lang="en" data-editable="footer.nav.why.en">Why 1%</span>
-        </a></li>
-        <li><a href="#testimonials">
-          <span data-lang="ar" data-editable="footer.nav.testimonials.ar">آراء</span>
-          <span data-lang="en" data-editable="footer.nav.testimonials.en">Testimonials</span>
-        </a></li>
-      </ul>
-    </div>
 
-    <div class="footer-col">
-      <h4>
-        <span data-lang="ar" data-editable="footer.legal.heading.ar">القانوني</span>
-        <span data-lang="en" data-editable="footer.legal.heading.en">Legal</span>
-      </h4>
-      <ul class="footer-links">
-        <li><a href="/privacy.html">
-          <span data-lang="ar" data-editable="footer.legal.privacy.ar">سياسة الخصوصية</span>
-          <span data-lang="en" data-editable="footer.legal.privacy.en">Privacy Policy</span>
-        </a></li>
-        <li><a href="/terms.html">
-          <span data-lang="ar" data-editable="footer.legal.terms.ar">الشروط والأحكام</span>
-          <span data-lang="en" data-editable="footer.legal.terms.en">Terms of Service</span>
-        </a></li>
-        <li><a href="/refund.html">
-          <span data-lang="ar" data-editable="footer.legal.refund.ar">سياسة الاسترجاع</span>
-          <span data-lang="en" data-editable="footer.legal.refund.en">Refund Policy</span>
-        </a></li>
-      </ul>
-    </div>
+      <form class="contact-form" action="mailto:hello@1percent.community" method="post" enctype="text/plain"
+            data-visible="true"
+            data-editable-data-visible="homepage.footer.show_contact_form">
+        <label class="contact-field">
+          <span class="contact-field-label">
+            <span data-lang="ar">الاسم</span>
+            <span data-lang="en">Name</span>
+          </span>
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label class="contact-field">
+          <span class="contact-field-label">
+            <span data-lang="ar">الإيميل</span>
+            <span data-lang="en">Email</span>
+          </span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label class="contact-field">
+          <span class="contact-field-label">
+            <span data-lang="ar">الرسالة</span>
+            <span data-lang="en">Message</span>
+          </span>
+          <textarea name="message" rows="3" required></textarea>
+        </label>
+        <button type="submit" class="btn-outline contact-submit">
+          <span data-lang="ar">أرسل</span>
+          <span data-lang="en">Send</span>
+        </button>
+      </form>
 
-    <div class="footer-col">
-      <h4>
-        <span data-lang="ar" data-editable="footer.connect.heading.ar">تواصل</span>
-        <span data-lang="en" data-editable="footer.connect.heading.en">Connect</span>
-      </h4>
+      <a class="footer-email" href="mailto:hello@1percent.community"
+         data-visible="false"
+         data-editable-data-visible="homepage.footer.show_email">
+        hello@1percent.community
+      </a>
+
       <nav class="footer-socials" aria-label="Social">
-        <a class="social-link" href="https://instagram.com/1percent_community" target="_blank" rel="noopener"
-           aria-label="Instagram" data-editable-href="footer.instagram_url">
+        <a class="social-link" href="https://instagram.com/1percent_community" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
             <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
           </svg>
-          <span class="sr-only" data-editable="footer.instagram_handle">@1percent_community</span>
+          <span class="sr-only">@1percent_community</span>
         </a>
-        <a class="social-link" href="https://tiktok.com/@1percent_community" target="_blank" rel="noopener"
-           aria-label="TikTok" data-editable-href="footer.tiktok_url">
+        <a class="social-link" href="https://tiktok.com/@1percent_community" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
             <path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
           </svg>
-          <span class="sr-only" data-editable="footer.tiktok_handle">@1percent_community</span>
+          <span class="sr-only">@1percent_community</span>
         </a>
       </nav>
-      <a class="footer-email" href="mailto:hello@1percent.community"
-         data-editable-href="footer.email_url" data-editable="footer.email_text">
-        hello@1percent.community
-      </a>
+    </div>
+
+    <div class="footer-col">
+      <h4>
+        <span data-lang="ar">القانوني</span>
+        <span data-lang="en">Legal</span>
+      </h4>
+      <ul class="footer-links">
+        <li><a href="/privacy.html">
+          <span data-lang="ar">سياسة الخصوصية</span>
+          <span data-lang="en">Privacy Policy</span>
+        </a></li>
+        <li><a href="/terms.html">
+          <span data-lang="ar">الشروط والأحكام</span>
+          <span data-lang="en">Terms of Service</span>
+        </a></li>
+        <li><a href="/refund.html">
+          <span data-lang="ar">سياسة الاسترجاع</span>
+          <span data-lang="en">Refund Policy</span>
+        </a></li>
+      </ul>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <span data-lang="ar" data-editable="footer.copyright.ar">© ٢٠٢٦ مجتمع ١٪ — جميع الحقوق محفوظة</span>
-    <span data-lang="en" data-editable="footer.copyright.en">© 2026 1% Community — All rights reserved</span>
+    <span data-lang="ar" data-editable="homepage.footer.copyright.ar">© 2026 مجتمع 1%. جميع الحقوق محفوظة.</span>
+    <span data-lang="en" data-editable="homepage.footer.copyright.en">© 2026 1% Community. All rights reserved.</span>
   </div>
 </footer>
 
