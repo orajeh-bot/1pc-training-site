@@ -172,35 +172,86 @@ html[lang="en"] [data-lang="ar"] { display: none; }
 .btn-lang:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ══════════════════════════════════════════════════════════════════════
-   HERO — mobile: stacked, image on top, text below.
-   Desktop (≥768px): 2-column split, image one side, text the other.
+   HERO — full-bleed background image with text overlay.
+   Image is the composed subject (trainer + circle + triangle pattern).
+   Text sits on the negative-space side with a gradient scrim for legibility.
+   Object-position flips between RTL and LTR so the subject stays on the
+   opposite side from the text block.
    ══════════════════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  padding: 0 0 var(--space-xl);
-  text-align: center;
+  min-height: 85vh;
+  min-height: 85svh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  text-align: start;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
 }
 .hero-img-wrap {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 100%;
-  aspect-ratio: 9 / 16;
-  max-height: 70vh;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: auto;
+  margin: 0;
   overflow: hidden;
-  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
-  margin: 0 0 var(--space-lg);
+  z-index: 0;
+  background: transparent;
 }
 .hero-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* RTL (default) — subject stays on the right, text overlays on the left. */
+  object-position: 78% center;
+}
+html[dir="ltr"] .hero-img-wrap img,
+body.lang-en .hero-img-wrap img {
+  /* EN mirror — subject on the left, text on the right. */
+  object-position: 22% center;
+}
+/* Scrim — darker on the text side, transparent over the subject.
+   Uses CSS logical direction so RTL flips automatically via `to right/left`
+   overrides; the rtl/ltr pair keeps behavior explicit for older engines. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.82) 0%,
+    rgba(10, 10, 10, 0.55) 40%,
+    rgba(10, 10, 10, 0.18) 65%,
+    rgba(10, 10, 10, 0) 85%
+  );
+}
+html[dir="ltr"] .hero::after,
+body.lang-en .hero::after {
+  background: linear-gradient(
+    to left,
+    rgba(10, 10, 10, 0.82) 0%,
+    rgba(10, 10, 10, 0.55) 40%,
+    rgba(10, 10, 10, 0.18) 65%,
+    rgba(10, 10, 10, 0) 85%
+  );
 }
 .hero-body {
-  padding: 0 var(--space-sm);
-  max-width: 720px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  padding: clamp(1.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem);
+  margin: 0;
+}
+html[dir="ltr"] .hero,
+body.lang-en .hero {
+  justify-content: flex-end;
 }
 .hero-badge {
   display: inline-block;
@@ -214,28 +265,58 @@ html[lang="en"] [data-lang="ar"] { display: none; }
   text-transform: uppercase;
   font-family: var(--font-en);
   margin: 0 0 var(--space-md);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 .hero-title {
-  font-size: 2.25rem;
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0 0 var(--space-xs);
   color: var(--text);
   word-wrap: break-word;
   letter-spacing: -0.01em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 .hero-sub {
   color: var(--accent);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.6vw, 1.4rem);
   margin: 0 0 var(--space-sm);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 .hero-desc {
-  color: var(--text-dim);
-  font-size: 0.98rem;
-  margin: 0 auto var(--space-lg);
-  max-width: 560px;
+  color: var(--text);
+  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+  margin: 0 0 var(--space-lg);
+  max-width: 48ch;
   line-height: 1.75;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+/* Narrow viewports — tighten the scrim so text stays legible even when
+   the subject has drifted into the text area. */
+@media (max-width: 600px) {
+  .hero { min-height: 80vh; min-height: 80svh; }
+  .hero::after {
+    background: linear-gradient(
+      to right,
+      rgba(10, 10, 10, 0.88) 0%,
+      rgba(10, 10, 10, 0.62) 55%,
+      rgba(10, 10, 10, 0.28) 90%,
+      rgba(10, 10, 10, 0.15) 100%
+    );
+  }
+  html[dir="ltr"] .hero::after,
+  body.lang-en .hero::after {
+    background: linear-gradient(
+      to left,
+      rgba(10, 10, 10, 0.88) 0%,
+      rgba(10, 10, 10, 0.62) 55%,
+      rgba(10, 10, 10, 0.28) 90%,
+      rgba(10, 10, 10, 0.15) 100%
+    );
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -902,41 +983,17 @@ html[lang="ar"] .contact-field textarea { font-family: var(--font-ar); }
    ══════════════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
   body { font-size: 17px; }
-  .hero-title { font-size: 3.2rem; }
-  .hero-sub { font-size: 1.3rem; }
-  .hero-desc { font-size: 1.05rem; }
+  /* Hero typography is fluid (clamp()) across all viewports — see base rules. */
   .section { padding: var(--space-2xl) var(--space-sm); }
   .section-title { font-size: 2.1rem; }
   .final-cta h2 { font-size: 2.6rem; }
   .programs-grid { grid-template-columns: 1fr 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials { grid-template-columns: 1fr 1fr; }
-  /* 2-column split: image 50%, text 50%. Grid flow respects html[dir],
-     so in RTL the image lands on the right automatically. */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-xl) var(--space-lg);
-    text-align: start;
-  }
-  .hero-img-wrap {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    max-height: none;
-    aspect-ratio: 4 / 5;
-    border-radius: var(--radius-md);
-  }
-  .hero-body {
-    padding: 0;
-    max-width: none;
-    margin: 0;
-  }
-  .hero-desc { margin-inline: 0; }
+  /* Hero layout is full-bleed across all viewports (see base .hero rules).
+     Bump the body max-width at ≥768px so the text column breathes on
+     wider screens without overflowing the scrimmed area. */
+  .hero-body { max-width: 640px; }
   .footer-inner {
     grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
     gap: var(--space-xl);
