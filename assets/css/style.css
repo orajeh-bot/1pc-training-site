@@ -1016,10 +1016,13 @@ html[lang="ar"] .contact-field textarea { font-family: var(--font-ar); }
   }
   html[dir="rtl"] .trainer-section[data-pos="right"] .trainer-layout { direction: ltr; }
   html[dir="rtl"] .trainer-section[data-pos="left"]  .trainer-layout { direction: rtl; }
-  .trainer-section[data-pos="right"] .trainer-meta,
-  html[dir="rtl"] .trainer-section[data-pos="left"] .trainer-meta {
-    direction: initial;
-  }
+  /* Text flow in the meta block always follows the html root direction.
+     The grid-level direction flips above are purely for column ORDER
+     (image vs text side) — the text itself must read in its natural
+     reading order, so Arabic is right-aligned and English left-aligned
+     regardless of which side the image lands on. */
+  html[dir="rtl"] .trainer-meta { direction: rtl; }
+  html:not([dir="rtl"]) .trainer-meta { direction: ltr; }
   .trainer-meta { text-align: start; }
   .trainer-social { justify-content: flex-start; }
   .contact-form { max-width: 420px; }
