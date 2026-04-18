@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block crawlers from legal drafts (noindex already in meta, belt-and-braces).
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /refund.html
+
+Sitemap: https://training.1percent.community/sitemap.xml
