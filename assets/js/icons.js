@@ -41,16 +41,38 @@
   // Expose for the dashboard iframe preview (if loaded) or manual debugging.
   window.__1PC_ICON_LIB = lib;
 
+  function paintOne(card) {
+    var key = card.getAttribute('data-icon');
+    if (!key) return;
+    var slot = card.querySelector('.why-icon');
+    if (!slot) return;
+    var svg = lib[key];
+    if (svg) {
+      slot.innerHTML = svg;
+      return;
+    }
+    // Unknown key — try the custom-icon directory. User-uploaded SVGs
+    // live at /assets/icons/<key>.svg (dashboard "Upload icon" flow
+    // writes them there). Fetched on-demand to avoid a manifest round
+    // trip. Failures leave the hardcoded fallback SVG in place.
+    fetch('/assets/icons/' + encodeURIComponent(key) + '.svg', { cache: 'force-cache' })
+      .then(function (r) { return r.ok ? r.text() : null; })
+      .then(function (text) {
+        if (!text) return;
+        // Basic sanity: must look like SVG, no <script>.
+        var t = text.toLowerCase();
+        if (t.indexOf('<svg') < 0 || t.indexOf('<script') >= 0) return;
+        // Cache in-memory so subsequent paints (lang toggle re-render
+        // etc.) don't re-fetch.
+        lib[key] = text;
+        slot.innerHTML = text;
+      })
+      .catch(function () { /* swallow — fallback stays */ });
+  }
+
   function paint() {
     var cards = document.querySelectorAll('.why-card[data-icon]');
-    for (var i = 0; i < cards.length; i++) {
-      var card = cards[i];
-      var key = card.getAttribute('data-icon');
-      var svg = lib[key];
-      if (!svg) continue;  // unknown key → keep hardcoded fallback
-      var slot = card.querySelector('.why-icon');
-      if (slot) slot.innerHTML = svg;
-    }
+    for (var i = 0; i < cards.length; i++) paintOne(cards[i]);
   }
 
   if (document.readyState === 'loading') {
