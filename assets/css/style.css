@@ -173,21 +173,19 @@ html[lang="en"] [data-lang="ar"] { display: none; }
 
 /* ══════════════════════════════════════════════════════════════════════
    HERO — full-bleed background image with text overlay.
-   Image is the composed subject (trainer + circle + triangle pattern).
-   Text sits on the negative-space side with a gradient scrim for legibility.
-   Object-position flips between RTL and LTR so the subject stays on the
-   opposite side from the text block.
+   The source composition has black negative space on the LEFT and the
+   subject (man + green circle + white lightning + triangle pattern) on
+   the RIGHT. The text block is pinned to the left edge via absolute
+   positioning in BOTH languages so the layout matches the composition.
+   Text direction inside the block still follows html[dir] — Arabic reads
+   right-to-left within the block, English left-to-right.
    ══════════════════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
   min-height: 85vh;
   min-height: 85svh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   padding: 0;
-  text-align: start;
   background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
 }
 .hero-img-wrap {
@@ -207,17 +205,13 @@ html[lang="en"] [data-lang="ar"] { display: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* RTL (default) — subject stays on the right, text overlays on the left. */
-  object-position: 78% center;
+  /* Subject sits in the right half of the source composition. Anchoring
+     the image at 75% x keeps the subject inside the right third of the
+     viewport regardless of aspect ratio. */
+  object-position: 75% center;
 }
-html[dir="ltr"] .hero-img-wrap img,
-body.lang-en .hero-img-wrap img {
-  /* EN mirror — subject on the left, text on the right. */
-  object-position: 22% center;
-}
-/* Scrim — darker on the text side, transparent over the subject.
-   Uses CSS logical direction so RTL flips automatically via `to right/left`
-   overrides; the rtl/ltr pair keeps behavior explicit for older engines. */
+/* Scrim — darker on the LEFT where the text block sits, fading to
+   transparent over the subject on the right. Same in both languages. */
 .hero::after {
   content: "";
   position: absolute;
@@ -226,32 +220,26 @@ body.lang-en .hero-img-wrap img {
   pointer-events: none;
   background: linear-gradient(
     to right,
-    rgba(10, 10, 10, 0.82) 0%,
-    rgba(10, 10, 10, 0.55) 40%,
-    rgba(10, 10, 10, 0.18) 65%,
-    rgba(10, 10, 10, 0) 85%
-  );
-}
-html[dir="ltr"] .hero::after,
-body.lang-en .hero::after {
-  background: linear-gradient(
-    to left,
-    rgba(10, 10, 10, 0.82) 0%,
-    rgba(10, 10, 10, 0.55) 40%,
-    rgba(10, 10, 10, 0.18) 65%,
-    rgba(10, 10, 10, 0) 85%
+    rgba(10, 10, 10, 0.85) 0%,
+    rgba(10, 10, 10, 0.55) 35%,
+    rgba(10, 10, 10, 0.15) 60%,
+    rgba(10, 10, 10, 0) 80%
   );
 }
 .hero-body {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  max-width: 560px;
+  top: 50%;
+  left: 0;
+  right: auto;
+  transform: translateY(-50%);
+  max-width: min(560px, 90vw);
   padding: clamp(1.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem);
   margin: 0;
-}
-html[dir="ltr"] .hero,
-body.lang-en .hero {
-  justify-content: flex-end;
+  /* Inherit direction from <html> so Arabic text flows RTL and English
+     LTR within the block. Text-align: start makes the text hug its own
+     reading edge — the block itself stays pinned to the viewport left. */
+  text-align: start;
 }
 .hero-badge {
   display: inline-block;
