@@ -446,6 +446,168 @@
   </div>
 </footer>
 
+<!-- LEAD_CAPTURE_MODAL_V1 — GHL lead capture, slug=move-without-pain -->
+<style>
+#lcModalRoot { position: fixed; inset: 0; z-index: 9999; display: none; }
+#lcModalRoot.open { display: block; }
+#lcModalBackdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.72); }
+#lcModalCard {
+  position: relative; max-width: 440px; margin: 8vh auto 0;
+  background: #141414; color: #f3f3f3; border: 1px solid #222; border-radius: 14px;
+  padding: 28px 26px 22px; box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  font-family: 'Inter', 'Cairo', system-ui, sans-serif;
+}
+html[dir=rtl] #lcModalCard { text-align: right; }
+#lcModalCard h3 { font-size: 20px; font-weight: 800; margin: 0 0 8px; color: #fff; }
+#lcModalCard p.lc-sub { font-size: 14px; color: #b6b6b6; margin: 0 0 18px; line-height: 1.5; }
+#lcModalCard label { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #888; margin: 10px 0 5px; font-weight: 700; }
+html[dir=rtl] #lcModalCard label { letter-spacing: 0; text-transform: none; font-size: 13px; }
+#lcModalCard input {
+  width: 100%; box-sizing: border-box; background: #0c0c0c; border: 1px solid #2a2a2a;
+  border-radius: 8px; padding: 11px 13px; color: #fff; font-size: 14px; font-family: inherit;
+  transition: border-color .2s;
+}
+#lcModalCard input:focus { outline: none; border-color: #25CE8E; }
+#lcModalCard .lc-honey { position: absolute !important; left: -9999px !important; opacity: 0; pointer-events: none; height: 0; width: 0; }
+#lcModalCard .lc-actions { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+#lcModalCard button.lc-submit {
+  flex: 1; background: #25CE8E; color: #000; font-weight: 800; border: none;
+  border-radius: 10px; padding: 13px 18px; font-size: 14px; cursor: pointer;
+  font-family: inherit; letter-spacing: 0.3px; transition: background .2s, transform .1s;
+}
+#lcModalCard button.lc-submit:hover:not(:disabled) { background: #1FB77D; transform: translateY(-1px); }
+#lcModalCard button.lc-submit:disabled { opacity: 0.6; cursor: wait; }
+#lcModalCard button.lc-skip {
+  background: transparent; color: #888; border: none; cursor: pointer;
+  font-size: 13px; font-family: inherit; padding: 8px 10px;
+}
+#lcModalCard button.lc-skip:hover { color: #fff; }
+#lcModalCard .lc-err { color: #ff6b6b; font-size: 13px; margin-top: 10px; min-height: 18px; }
+#lcModalCard .lc-ok { color: #25CE8E; font-size: 13px; margin-top: 10px; }
+</style>
+
+<div id="lcModalRoot" role="dialog" aria-modal="true" aria-labelledby="lcModalTitle">
+  <div id="lcModalBackdrop" onclick="lcClose()"></div>
+  <div id="lcModalCard">
+    <h3 id="lcModalTitle">
+      <span data-lang="ar">احصل على تفاصيل البرنامج</span>
+      <span data-lang="en">Get the full program details</span>
+    </h3>
+    <p class="lc-sub">
+      <span data-lang="ar">اكتب اسمك ورقم جوالك وإيميلك — نرسل لك كل ما تحتاج.</span>
+      <span data-lang="en">Drop your name, mobile and email — we'll send you what you need.</span>
+    </p>
+    <form id="lcForm" onsubmit="return lcSubmit(event)" novalidate>
+      <label for="lcName"><span data-lang="ar">الاسم</span><span data-lang="en">Name</span></label>
+      <input type="text" id="lcName" name="name" required maxlength="120" autocomplete="name">
+      <label for="lcMobile"><span data-lang="ar">رقم الجوال</span><span data-lang="en">Mobile</span></label>
+      <input type="tel" id="lcMobile" name="mobile" required maxlength="32" autocomplete="tel" placeholder="+9665XXXXXXXX">
+      <label for="lcEmail"><span data-lang="ar">الإيميل</span><span data-lang="en">Email</span></label>
+      <input type="email" id="lcEmail" name="email" required maxlength="200" autocomplete="email">
+      <input type="text" class="lc-honey" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="lc-err" id="lcErr" aria-live="polite"></div>
+      <div class="lc-actions">
+        <button type="submit" class="lc-submit" id="lcSubmitBtn">
+          <span data-lang="ar">ابعث لي</span>
+          <span data-lang="en">Send me details</span>
+        </button>
+        <button type="button" class="lc-skip" onclick="lcClose()">
+          <span data-lang="ar">تخطّي</span>
+          <span data-lang="en">Skip</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var SLUG = 'move-without-pain';
+  var API = 'https://api.1percent.community/api/lead-capture';
+  var STORAGE_KEY = 'lead_captured_' + SLUG;
+
+  function $(id){ return document.getElementById(id); }
+
+  window.lcOpen = function(){
+    var root = $('lcModalRoot');
+    if (root) root.classList.add('open');
+  };
+  window.lcClose = function(){
+    var root = $('lcModalRoot');
+    if (root) root.classList.remove('open');
+  };
+
+  function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+  function validMobile(m){ return /^\+?\d[\d\s\-()]{5,24}$/.test(m); }
+
+  window.lcSubmit = function(ev){
+    ev.preventDefault();
+    var name = $('lcName').value.trim();
+    var mobile = $('lcMobile').value.trim();
+    var email = $('lcEmail').value.trim();
+    var website = (document.querySelector('#lcForm input[name=website]') || {}).value || '';
+    var err = $('lcErr');
+    err.className = 'lc-err';
+    err.textContent = '';
+    if (!name) { err.textContent = 'Name required'; return false; }
+    if (!validMobile(mobile)) { err.textContent = 'Valid mobile required'; return false; }
+    if (!validEmail(email)) { err.textContent = 'Valid email required'; return false; }
+    var btn = $('lcSubmitBtn');
+    btn.disabled = true;
+    fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name, mobile: mobile, email: email, program_slug: SLUG, website: website}),
+    }).then(function(r){ return r.json().then(function(j){ return {status: r.status, body: j}; }); })
+      .then(function(res){
+        if (res.body && res.body.ok) {
+          try { localStorage.setItem(STORAGE_KEY, Date.now().toString()); } catch(e){}
+          err.className = 'lc-ok';
+          err.textContent = 'Done — check your email.';
+          setTimeout(window.lcClose, 1200);
+        } else {
+          err.className = 'lc-err';
+          err.textContent = (res.body && res.body.error) ? ('Error: ' + res.body.error) : 'Submission failed';
+          btn.disabled = false;
+        }
+      })
+      .catch(function(e){
+        err.className = 'lc-err';
+        err.textContent = 'Network error — try again';
+        btn.disabled = false;
+      });
+    return false;
+  };
+
+  function firstVisitGate(){
+    try { if (localStorage.getItem(STORAGE_KEY)) return; } catch(e){ return; }
+    setTimeout(window.lcOpen, 1200);
+  }
+
+  function bindCheckoutGate(){
+    var links = document.querySelectorAll('a[href*="buy.stripe.com"]');
+    links.forEach(function(a){
+      a.addEventListener('click', function(ev){
+        try { if (localStorage.getItem(STORAGE_KEY)) return; } catch(e){ return; }
+        ev.preventDefault();
+        window.lcOpen();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){
+      firstVisitGate();
+      bindCheckoutGate();
+    });
+  } else {
+    firstVisitGate();
+    bindCheckoutGate();
+  }
+})();
+</script>
+<!-- /LEAD_CAPTURE_MODAL_V1 -->
+
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
