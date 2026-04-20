@@ -444,7 +444,8 @@ html[lang="en"] [data-lang="ar"] { display: none; }
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: border-color var(--t), transform var(--t);
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 /* The left accent bar — slides up to 100% on hover. In RTL, flip to the right. */
 .program-card::before {
@@ -472,6 +473,9 @@ html[lang="en"] [data-lang="ar"] { display: none; }
 .program-body {
   padding: var(--space-md) var(--space-md) calc(var(--space-md) + 4px);
   text-align: start;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .program-title {
   font-size: 1.15rem;
@@ -490,7 +494,7 @@ html[lang="en"] [data-lang="ar"] { display: none; }
   font-weight: 800;
   font-family: var(--font-en);
   font-size: 1.15rem;
-  margin: 0 0 var(--space-sm);
+  margin: auto 0 var(--space-sm);
   letter-spacing: 0.01em;
 }
 .program-cta {
