@@ -208,7 +208,7 @@ html[lang="en"] [data-lang="ar"] { display: none; }
   /* Subject sits in the right half of the source composition. Anchoring
      the image at 75% x keeps the subject inside the right third of the
      viewport regardless of aspect ratio. */
-  object-position: 75% center;
+  object-position: center center;
 }
 /* Scrim — darker on the LEFT where the text block sits, fading to
    transparent over the subject on the right. Same in both languages. */
@@ -1320,4 +1320,115 @@ html[lang="ar"] .program-meta-duration { font-family: var(--font-ar); letter-spa
   .program-hero-sub { font-size: 1.3rem; }
   .benefits-grid { grid-template-columns: 1fr 1fr; }
   .program-final-cta h2 { font-size: 2.4rem; }
+}
+
+
+/* ════════════════════════════════════════════════════════════════════
+   TRAINER-HERO — mirrors .hero. Immersive full-bleed "Meet the Coach"
+   section. Same orientation as .hero (text left, subject right) so the
+   brand photos read as one visual language across both sections.
+   ════════════════════════════════════════════════════════════════════ */
+.trainer-hero {
+  position: relative;
+  min-height: 85vh;
+  min-height: 85svh;
+  overflow: hidden;
+  padding: 0;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+.trainer-hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  background: transparent;
+}
+.trainer-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.trainer-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.85) 0%,
+    rgba(10, 10, 10, 0.55) 35%,
+    rgba(10, 10, 10, 0.15) 60%,
+    rgba(10, 10, 10, 0) 80%
+  );
+}
+.trainer-hero-body {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  right: auto;
+  transform: translateY(-50%);
+  max-width: min(560px, 90vw);
+  padding: clamp(1.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem);
+  margin: 0;
+  text-align: start;
+}
+.trainer-hero-label {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-en);
+  margin: 0 0 var(--space-md);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.trainer-hero-title {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-sm);
+}
+.trainer-hero-role {
+  color: var(--accent);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-en);
+}
+html[lang="ar"] .trainer-hero-role { font-family: var(--font-ar); }
+.trainer-hero-bio {
+  color: var(--text-dim);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.7;
+  margin: 0 0 var(--space-md);
+}
+.trainer-hero .trainer-social {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: var(--space-sm);
+}
+@media (max-width: 720px) {
+  .trainer-hero { min-height: 70vh; min-height: 70svh; }
+  .trainer-hero::after {
+    background: linear-gradient(
+      to right,
+      rgba(10, 10, 10, 0.92) 0%,
+      rgba(10, 10, 10, 0.70) 60%,
+      rgba(10, 10, 10, 0.35) 100%
+    );
+  }
 }
